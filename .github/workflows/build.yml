@@ -28,6 +28,10 @@ jobs:
             name: ipywidgets-jsonschema
             package-name: ipywidgets_jsonschema
             version: "v1.1.0"
+          - repo: https://github.com/materialsproject/pymatgen/
+            name: pymatgen
+            package-name: pymatgen
+            version: "v2024.4.13"
 
     steps:
       - name: Check out the repo
