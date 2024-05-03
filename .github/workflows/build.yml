@@ -40,7 +40,7 @@ jobs:
             name: pydantic-core
             package-name: pydantic_core
             version: "v2.18.2"
-            command: rustup install nightly
+            command: rustup install nightly && rustup default nightly
 
 
     steps:
