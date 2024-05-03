@@ -24,14 +24,19 @@ jobs:
           # - repo: https://github.com/kuelumbus/rdkit-pypi/
           #   name: rdkit-pypi
           #   version: "rdkit-pypi"
-          - repo: https://github.com/ssciwr/ipywidgets-jsonschema
-            name: ipywidgets-jsonschema
-            package-name: ipywidgets_jsonschema
-            version: "v1.1.0"
-          - repo: https://github.com/materialsproject/pymatgen/
-            name: pymatgen
-            package-name: pymatgen
-            version: "v2024.4.13"
+          # - repo: https://github.com/ssciwr/ipywidgets-jsonschema
+          #   name: ipywidgets-jsonschema
+          #   package-name: ipywidgets_jsonschema
+          #   version: "v1.1.0"
+          # - repo: https://github.com/materialsproject/pymatgen/
+          #   name: pymatgen
+          #   package-name: pymatgen
+          #   version: "v2024.4.13"
+          - repo: https://github.com/pydantic/pydantic/
+            name: pydantic
+            package-name: pydantic
+            version: "v2.7.1"
+
 
     steps:
       - name: Check out the repo
