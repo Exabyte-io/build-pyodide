@@ -68,7 +68,7 @@ jobs:
       - name: Build with Pyodide
         run: |
           set -vxeuo pipefail
-          if [ "${{ matrix.command }}" !== "" ]; then
+          if [[ ! -z "${{ matrix.command }}" ]]; then
             ${{ matrix.command }}
           fi
           git clone --depth 1 --branch ${{ matrix.version }} ${{ matrix.repo }}
