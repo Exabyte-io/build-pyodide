@@ -32,14 +32,15 @@ jobs:
           #   name: pymatgen
           #   package-name: pymatgen
           #   version: "v2024.4.13"
-          - repo: https://github.com/pydantic/pydantic/
-            name: pydantic
-            package-name: pydantic
-            version: "v2.7.1"
+          # - repo: https://github.com/pydantic/pydantic/
+          #   name: pydantic
+          #   package-name: pydantic
+          #   version: "v2.7.1"
           - repo: https://github.com/pydantic/pydantic-core/
             name: pydantic-core
             package-name: pydantic_core
             version: "v2.18.2"
+            command: rustup install nightly
 
 
     steps:
@@ -67,6 +68,9 @@ jobs:
       - name: Build with Pyodide
         run: |
           set -vxeuo pipefail
+          if [ ${{ matrix.command }} !== '' ]; then
+            ${{ matrix.command }}
+          fi
           git clone --depth 1 --branch ${{ matrix.version }} ${{ matrix.repo }}
           cd ${{ matrix.name }}
           pyodide build
