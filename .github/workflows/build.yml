@@ -36,6 +36,10 @@ jobs:
             name: pydantic
             package-name: pydantic
             version: "v2.7.1"
+          - repo: https://github.com/pydantic/pydantic-core/
+            name: pydantic-core
+            package-name: pydantic_core
+            version: "v2.18.2"
 
 
     steps:
