@@ -28,10 +28,14 @@ jobs:
           #   name: ipywidgets-jsonschema
           #   package-name: ipywidgets_jsonschema
           #   version: "v1.1.0"
-          - repo: https://github.com/materialsproject/pymatgen/
-            name: pymatgen
-            package-name: pymatgen
-            version: "v2024.7.18"
+          - repo: https://github.com/spglib/spglib/
+            name: spglib
+            package-name: spglib
+            version: "v2.5.0"
+          # - repo: https://github.com/materialsproject/pymatgen/
+          #   name: pymatgen
+          #   package-name: pymatgen
+          #   version: "v2024.7.18"
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
           #   package-name: pydantic
