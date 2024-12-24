@@ -35,7 +35,7 @@ jobs:
           - repo: https://github.com/materialsproject/pymatgen/
             name: pymatgen
             package-name: pymatgen
-            version: "v2024.11.13"
+            version: "v2024.9.17"
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
           #   package-name: pydantic
