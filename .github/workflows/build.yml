@@ -36,6 +36,7 @@ jobs:
             name: pymatgen
             package-name: pymatgen
             version: "v2024.11.13"
+            command: whoami
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
           #   package-name: pydantic
