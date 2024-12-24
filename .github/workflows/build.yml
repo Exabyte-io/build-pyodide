@@ -62,7 +62,7 @@ jobs:
       - name: Set up env vars for Emscripten
         run: |
           set -vxeuo pipefail
-          pip install pyodide-build==0.25.1
+          pip install pyodide-build==0.24.1
           # Currently deployed version for jupyterlite.mat3ra.com
           export EMSCRIPTEN_VERSION="3.1.45"
           # export EMSCRIPTEN_VERSION=$(pyodide config get emscripten_version)
