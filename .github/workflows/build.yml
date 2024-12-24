@@ -62,10 +62,10 @@ jobs:
       - name: Set up env vars for Emscripten
         run: |
           set -vxeuo pipefail
-          pip install pyodide-build==0.24.0
+          pip install pyodide-build==0.25.1
           # Currently deployed version for jupyterlite.mat3ra.com
-          # export EMSCRIPTEN_VERSION="3.1.45"
-          export EMSCRIPTEN_VERSION=$(pyodide config get emscripten_version)
+          export EMSCRIPTEN_VERSION="3.1.45"
+          # export EMSCRIPTEN_VERSION=$(pyodide config get emscripten_version)
           echo EMSCRIPTEN_VERSION=${EMSCRIPTEN_VERSION} >> $GITHUB_ENV
           echo "EMSCRIPTEN_VERSION is $EMSCRIPTEN_VERSION"
 
@@ -80,9 +80,6 @@ jobs:
           if [[ ! -z "${{ matrix.command }}" ]]; then
             ${{ matrix.command }}
           fi
-          # exports only needed for pymatgen
-          export CFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64"
-          export CXXFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64"
           git clone --depth 1 --branch ${{ matrix.version }} ${{ matrix.repo }}
           cd ${{ matrix.name }}
           pyodide build
