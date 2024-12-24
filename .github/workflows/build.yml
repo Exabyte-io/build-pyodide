@@ -35,7 +35,10 @@ jobs:
           - repo: https://github.com/materialsproject/pymatgen/
             name: pymatgen
             package-name: pymatgen
-            version: "v2024.9.17"
+            version: "v2024.11.13"
+            command: |
+              export CFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64"
+              export CXXFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64"
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
           #   package-name: pydantic
