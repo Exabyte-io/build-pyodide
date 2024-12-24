@@ -36,7 +36,6 @@ jobs:
             name: pymatgen
             package-name: pymatgen
             version: "v2024.11.13"
-            command: 'export CFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64" && export CXXFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64"'
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
           #   package-name: pydantic
@@ -80,6 +79,9 @@ jobs:
           if [[ ! -z "${{ matrix.command }}" ]]; then
             ${{ matrix.command }}
           fi
+          # exports only needed for pymatgen
+          export CFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64"
+          export CXXFLAGS="-DLONG_BIT=64 -DSIZEOF_VOID_P=8 -D_FILE_OFFSET_BITS=64"
           git clone --depth 1 --branch ${{ matrix.version }} ${{ matrix.repo }}
           cd ${{ matrix.name }}
           pyodide build
