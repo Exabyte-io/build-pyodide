@@ -32,10 +32,12 @@ jobs:
             name: spglib
             package-name: spglib
             version: "v2.5.0"
-          # - repo: https://github.com/materialsproject/pymatgen/
-          #   name: pymatgen
-          #   package-name: pymatgen
-          #   version: "v2024.11.13"
+            command: whoami
+          - repo: https://github.com/materialsproject/pymatgen/
+            name: pymatgen
+            package-name: pymatgen
+            version: "v2024.11.13"
+            command: whoami
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
           #   package-name: pydantic
@@ -46,7 +48,7 @@ jobs:
           #  version: "v2.18.2"
           #  # https://stackoverflow.com/questions/48675235/error-the-option-z-is-only-accepted-on-the-nightly-compiler
           #  # https://stackoverflow.com/questions/56389460/compilation-error-cant-find-crate-for-core
-            command: rustup install nightly && rustup default nightly && rustup target add wasm32-unknown-emscripten
+          #  command: rustup install nightly && rustup default nightly && rustup target add wasm32-unknown-emscripten
 
 
     steps:
@@ -61,9 +63,9 @@ jobs:
       - name: Set up env vars for Emscripten
         run: |
           set -vxeuo pipefail
-          pip install pyodide-build==0.24.1
-          # Currently deployed version for jupyterlite.mat3ra.com
-          export EMSCRIPTEN_VERSION="3.1.45"
+          # See https://github.com/jupyterlite/pyodide-kernel for compatibility matrix
+          pip install pyodide-build==0.25.1
+          export EMSCRIPTEN_VERSION="3.1.46"
           # export EMSCRIPTEN_VERSION=$(pyodide config get emscripten_version)
           echo EMSCRIPTEN_VERSION=${EMSCRIPTEN_VERSION} >> $GITHUB_ENV
           echo "EMSCRIPTEN_VERSION is $EMSCRIPTEN_VERSION"
