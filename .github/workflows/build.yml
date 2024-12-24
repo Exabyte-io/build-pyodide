@@ -28,15 +28,14 @@ jobs:
           #   name: ipywidgets-jsonschema
           #   package-name: ipywidgets_jsonschema
           #   version: "v1.1.0"
-          # - repo: https://github.com/spglib/spglib/
-          #   name: spglib
-          #   package-name: spglib
-          #   version: "v2.5.0"
-          - repo: https://github.com/materialsproject/pymatgen/
-            name: pymatgen
-            package-name: pymatgen
-            version: "v2024.11.13"
-            command: whoami
+          - repo: https://github.com/spglib/spglib/
+            name: spglib
+            package-name: spglib
+            version: "v2.5.0"
+          # - repo: https://github.com/materialsproject/pymatgen/
+          #   name: pymatgen
+          #   package-name: pymatgen
+          #   version: "v2024.11.13"
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
           #   package-name: pydantic
@@ -47,7 +46,7 @@ jobs:
           #  version: "v2.18.2"
           #  # https://stackoverflow.com/questions/48675235/error-the-option-z-is-only-accepted-on-the-nightly-compiler
           #  # https://stackoverflow.com/questions/56389460/compilation-error-cant-find-crate-for-core
-          #  command: rustup install nightly && rustup default nightly && rustup target add wasm32-unknown-emscripten
+            command: rustup install nightly && rustup default nightly && rustup target add wasm32-unknown-emscripten
 
 
     steps:
