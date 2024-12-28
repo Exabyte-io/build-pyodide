@@ -36,7 +36,7 @@ jobs:
           - repo: https://github.com/materialsproject/pymatgen/
             name: pymatgen
             package-name: pymatgen
-            version: "v2024.11.13"
+            version: "v2024.10.22"
             command: whoami
           # - repo: https://github.com/pydantic/pydantic/
           #   name: pydantic
@@ -64,8 +64,10 @@ jobs:
         run: |
           set -vxeuo pipefail
           # See https://github.com/jupyterlite/pyodide-kernel for compatibility matrix
-          pip install pyodide-build==0.25.1
-          export EMSCRIPTEN_VERSION="3.1.46"
+          pip install pyodide-build==0.24.1
+          export EMSCRIPTEN_VERSION="3.1.45"
+          # pip install pyodide-build==0.25.1
+          # export EMSCRIPTEN_VERSION="3.1.46"
           # export EMSCRIPTEN_VERSION=$(pyodide config get emscripten_version)
           echo EMSCRIPTEN_VERSION=${EMSCRIPTEN_VERSION} >> $GITHUB_ENV
           echo "EMSCRIPTEN_VERSION is $EMSCRIPTEN_VERSION"
