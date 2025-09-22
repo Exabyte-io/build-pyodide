@@ -28,21 +28,22 @@ jobs:
           #   name: ipywidgets-jsonschema
           #   package-name: ipywidgets_jsonschema
           #   version: "v1.1.0"
-          - repo: https://github.com/usnistgov/atomman/
-            name: atomman
-            package-name: atomman
-            version: "v1.4.11"
-            command: whoami
+
+          # - repo: https://github.com/usnistgov/atomman/
+          #   name: atomman
+          #   package-name: atomman
+          #   version: "v1.4.11"
+          #   command: whoami
           - repo: https://github.com/mongodb/mongo-python-driver
-            name: pymonngo
+            name: mongo-python-driver
             package-name: pymongo
             version: "4.15.1"
             command: whoami
-          - repo: https://github.com/yaml/pyyaml
-            name: pyyaml
-            package-name: pyyaml
-            version: "6.0.2"
-            command: whoami
+          # - repo: https://github.com/yaml/pyyaml
+          #   name: pyyaml
+          #   package-name: pyyaml
+          #   version: "6.0.2"
+          #   command: whoami
           # - repo: https://github.com/spglib/spglib/
           #   name: spglib
           #   package-name: spglib
