@@ -34,11 +34,18 @@ jobs:
           #   package-name: atomman
           #   version: "v1.4.11"
           #   command: whoami
-          - repo: https://github.com/mongodb/mongo-python-driver
-            name: mongo-python-driver
-            package-name: pymongo
-            version: "4.15.1"
+          # - repo: https://github.com/mongodb/mongo-python-driver
+          #  name: mongo-python-driver
+          #  package-name: pymongo
+          #  version: "4.15.1"
+          #  command: whoami
+
+          - repo: https://github.com/libatoms/matscipy
+            name: matscipy
+            package-name: matscipy
+            version: "1.2.0"
             command: whoami
+            
           # - repo: https://github.com/yaml/pyyaml
           #   name: pyyaml
           #   package-name: pyyaml
