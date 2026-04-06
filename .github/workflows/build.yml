@@ -43,7 +43,7 @@ jobs:
           - repo: https://github.com/libatoms/matscipy
             name: matscipy
             package-name: matscipy
-            version: "1.2.0"
+            version: "v1.2.0"
             command: whoami
             
           # - repo: https://github.com/yaml/pyyaml
